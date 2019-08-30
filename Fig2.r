@@ -5,7 +5,6 @@ par(oma = c(10, 10, 10, 10)) # 下・左・上・右
 par(mfcol=c(3,2)) # c(行, 列)  
 par(mar = c(0, 0, 0, 0))  # 下・左・上・右
 
-k<-0
 week<-c("5week", "8week")
 cols<-c("red", "blue")
 text2<-c("RootDW", "Phosphorus", "RLD")
@@ -16,7 +15,6 @@ yaxes<-rbind(c(0,0.3,0.6,0.9,1.2), c(0,0.1,0.2,0.3,0.4), c(0,6,12,18,24)) # RDW,
 
 for (i in 1:2) {
     for (j in 1:3) {
-        k<-k+1
         sd<-subset(d1,d1$Stage==week[i])
         x<-sd[,5]
         y<-sd[,5+j]
