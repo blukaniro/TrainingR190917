@@ -1,5 +1,12 @@
 Rの基本的な使い方 190917 Ryosuke TAJIMA 
 ==============  
+  
+- [基本](#基本)  
+- [統計解析](#統計解析)  
+- [作図](#作図)  
+- [さらに便利に](#さらに便利に)  
+- [作図課題](#作図課題)  
+  
 # 基本
 ## R言語の基本的な操作
 ```R  
@@ -222,7 +229,7 @@ result<-lm(SDW~SPC+RLD, sd5)
 summary(result)  
 ```  
 
-# 図表作成
+# 作図
 ## 基本  
 ```R  
 a<-c(1,3,5,7,9) #数字列
@@ -384,6 +391,8 @@ mtext("ShootDW",adj=0.5,side = 1, cex = 1.5, line = -1, outer=TRUE)
 
 ```R  
 pdf("test.pdf", width=5, height=5)
+a<-c(1,3,5,7,9) #数字列
+b<-c(2,4,6,8,10) #数字列
 plot(a,b, type="o", col="red", pch=16, cex=2) #組み合わせられる
 dev.off()
 ```  
@@ -441,26 +450,28 @@ source("Fig1.r")
 ### for  
 ```R  
 d<-0
+ld<-c()
 for (i in 1:100) {
     d<-d+i
+    ld<-c(ld,d)
 }
 
 ```  
 
 ### forとifの組み合わせ  
 ```R  
-do<-0
-de<-0
+ldo<-c()
+lde<-c()
 for (i in 1:100) {
     if (i%%2==0) {
-        de<-de+i
+        lde<-c(lde,i)
     } else {
-        do<-do+i
+        ldo<-c(ldo,i)
     }
 }
 ```  
 
-# 図表作成発展的課題
+# 作図課題
   
 - [Fig2](https://github.com/blukaniro/TrainingR190917/blob/master/Fig2.pdf)を作る
 - [ソースコード](https://github.com/blukaniro/TrainingR190917/blob/master/Fig2.r)
